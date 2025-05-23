@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="mailto:pizza-orders@medpizza.com.eg">
+        <p>we only use fresh ingredients and some pizza toppings may not be 
+            available we will supply three from your list.
+        </p>
+        <textarea name="toppings" cols="40" rows="5" wrap="off" id="toppings"></textarea>
+        <br>
+        Pizza size: <br>
+        <input type ="radio"  name = "pizza_size" value = "small">Small <br>
+        <input type ="radio"  name = "pizza_size" value = "medium" checked>Medium <br>
+        <input type ="radio"  name = "pizza_size" value = "Large">Large <br>
+        <input type ="submit" value = "order the pizza">
+        <input type ="reset"  value = "Clear To Restart">
+        <input type="number" min="0" max="10" step="1" value="0">
+    </form>
+<br>
+<br>
+<br>
+    <form action="FormDesign">
+        <input type="text" placeholder="type here">
+        <button type="button">GO</button>
+        <input type="date">
+        <input type="time">
+        <select name="combobox" id="dropdowm">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </form>
+
+    <br>
+    <br>
+    <form action="HTMLelement">
+        <input type="email" name="user_email">
+        <input type="search" name="search_query">
+        <input type="url" name="website">
+        <input type="text" name="First_name" autofocus>
+        <input type="number" name="quantity" min="0" max="100">
+
+    </form>
+
+    <br><br><br>
+    <form action="Agree">
+        Do You agree that the earth orbits the sun ? <br>
+        <input type="radio" name="orbits" value="strongly_agree">Strongly Agree <br>
+        <input type="radio" name="orbits" value="agree">Agree <br>
+        <input type="radio" name ="orbits" value="no_opinion">No Opinion <br>
+        <input type="radio" name="orbits" value="disagree">Disagree <br>
+        <input type="radio" name="orbits" value="strongly_disagree">StronglyDisAgree <br>
+    </form>
+</body>
+</html>

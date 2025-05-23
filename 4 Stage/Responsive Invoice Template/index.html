@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Invoice Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .invoice-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .company-info {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+    .invoice-details {
+      margin-bottom: 20px;
+    }
+    .invoice-details div {
+      margin: 5px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #007BFF;
+      color: #fff;
+    }
+    tbody tr:nth-child(odd) {
+      background: #f9f9f9;
+    }
+    tfoot tr {
+      background: #e0e0e0;
+      font-weight: bold;
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+      }
+      td {
+        padding-left: 50%;
+        position: relative;
+      }
+      td:before {
+        position: absolute;
+        left: 10px;
+        width: 40%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      td:nth-of-type(1):before { content: "Item"; }
+      td:nth-of-type(2):before { content: "Description"; }
+      td:nth-of-type(3):before { content: "Quantity"; }
+      td:nth-of-type(4):before { content: "Price"; }
+      td:nth-of-type(5):before { content: "Total"; }
+      tfoot {
+        display: block;
+      }
+      tfoot tr {
+        display: block;
+      }
+      tfoot td {
+        display: block;
+        text-align: right;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <div class="invoice-header">
+      <div class="company-info">My Company</div>
+      <div class="invoice-info">
+        <div>Invoice #12345</div>
+        <div>Date: 2025-03-07</div>
+      </div>
+    </div>
+    <div class="invoice-details">
+      <div><strong>Bill To:</strong> John Doe</div>
+      <div><strong>Address:</strong> 123 Main St, City, Country</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Product A</td>
+          <td>2</td>
+          <td>$50</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Product B</td>
+          <td>1</td>
+          <td>$150</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Service C</td>
+          <td>3</td>
+          <td>$75</td>
+          <td>$225</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align: right;">Subtotal</td>
+          <td>$475</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align: right;">Tax (10%)</td>
+          <td>$47.50</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align: right;">Total</td>
+          <td>$522.50</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="invoice-footer" style="text-align: center; font-size: 0.9em; color: #777;">
+      Thank you for your business!
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+h3
+{
+    text-align: center;
+    color: aqua;
+    background-color: blue;
+    font-size: medium;
+}
+.header-two
+{
+    background-color: blueviolet;
+    color: bisque;
+}
+.abstract
+{
+    font-size: 20px;
+    text-align: center;
+    background-color: chartreuse;
+    color: bisque;
+}
+span.f1
+{
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+}

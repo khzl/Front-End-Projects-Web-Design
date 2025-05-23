@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Student Grade Report</title>
+  <style>
+    /* Global and Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      margin: 0;
+    }
+    .grade-report {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .grade-report h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    
+    /* Form Styles */
+    form {
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    form input, form button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    form input {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    form button {
+      border: none;
+      background: #2c3e50;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #1a252f;
+    }
+    
+    /* Table Layout and Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #2c3e50;
+      color: #fff;
+    }
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    tbody tr:hover {
+      background: #eaeaea;
+    }
+    
+    /* Conditional Formatting: Pass vs Fail */
+    .pass {
+      background: #d4edda;
+    }
+    .fail {
+      background: #f8d7da;
+    }
+    
+    /* Summary Row Style */
+    .summary {
+      font-weight: bold;
+      background: #ecf0f1;
+    }
+    
+    /* Responsive Table Design */
+    @media (max-width: 600px) {
+      table, thead, tbody, tr, td, th {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+      }
+      td {
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td:before {
+        position: absolute;
+        left: 10px;
+        width: 40%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+      }
+      td:nth-of-type(1):before { content: "Student"; }
+      td:nth-of-type(2):before { content: "Subject"; }
+      td:nth-of-type(3):before { content: "Numeric Score"; }
+      td:nth-of-type(4):before { content: "Letter Grade"; }
+      td:nth-of-type(5):before { content: "Grade in Words"; }
+      .summary td:before { content: ""; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grade-report">
+    <h1>Student Grade Report</h1>
+    
+    <!-- Form for entering grade data -->
+    <form id="gradeForm">
+      <input type="text" id="studentName" placeholder="Student Name" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <input type="number" id="score" placeholder="Numeric Score" required min="0" max="100">
+      <button type="submit">Add Grade</button>
+    </form>
+    
+    <!-- Report Table -->
+    <table id="gradeTable">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Subject</th>
+          <th>Numeric Score</th>
+          <th>Letter Grade</th>
+          <th>Grade in Words</th>
+        </tr>
+      </thead>
+      <tbody id="gradeBody">
+        <!-- Existing entries can be placed here -->
+      </tbody>
+      <tfoot>
+        <tr class="summary">
+          <td colspan="2" style="text-align:right;">Overall Average المعدل العام:</td>
+          <td id="avgScore">0</td>
+          <td colspan="2"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <script>
+    // Array to store all numeric scores for calculating overall average.
+    let scores = [];
+
+    // Function to compute letter grade and description from the numeric score.
+    function computeGrade(score) {
+      let grade = '';
+      let gradeWord = '';
+
+      if (score >= 90) {
+        grade = 'A';
+        gradeWord = 'Excellent';
+      } else if (score >= 80) {
+        grade = 'B';
+        gradeWord = 'Very Good';
+      } else if (score >= 70) {
+        grade = 'C';
+        gradeWord = 'Good';
+      } else if (score >= 60) {
+        grade = 'D';
+        gradeWord = 'Needs Improvement';
+      } else {
+        grade = 'F';
+        gradeWord = 'Fail';
+      }
+      
+      return { grade, gradeWord };
+    }
+
+    // Function to update the overall average display.
+    function updateAverage() {
+      let total = scores.reduce((sum, current) => sum + current, 0);
+      let avg = scores.length ? (total / scores.length).toFixed(2) : 0;
+      document.getElementById('avgScore').textContent = avg;
+    }
+
+    // Listener for form submission
+    document.getElementById('gradeForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get user input values
+      const studentName = document.getElementById('studentName').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const scoreInput = document.getElementById('score').value;
+      const numericScore = parseFloat(scoreInput);
+      
+      // Validate numeric score
+      if (isNaN(numericScore) || numericScore < 0 || numericScore > 100) {
+        alert("Please enter a valid score between 0 and 100.");
+        return;
+      }
+      
+      // Compute grade details
+      const { grade, gradeWord } = computeGrade(numericScore);
+      
+      // Create a new table row with the entered data
+      const tbody = document.getElementById('gradeBody');
+      const row = document.createElement('tr');
+      
+      // Conditional class for pass/fail
+      const gradeClass = numericScore >= 60 ? 'pass' : 'fail';
+
+      // Create cells for student, subject, numeric score, letter grade, and grade in words
+      row.innerHTML = `
+        <td data-label="Student">${studentName}</td>
+        <td data-label="Subject">${subject}</td>
+        <td data-label="Numeric Score">${numericScore}</td>
+        <td data-label="Letter Grade" class="${gradeClass}">${grade}</td>
+        <td data-label="Grade in Words">${gradeWord}</td>
+      `;
+      
+      // Append the row to the table body
+      tbody.appendChild(row);
+
+      // Add the score to the scores array and update overall average
+      scores.push(numericScore);
+      updateAverage();
+
+      // Clear form fields for next entry
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>

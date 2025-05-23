@@ -1,0 +1,141 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Container and Header Styles */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  header {
+    background: #ffefef; /* light pastel for a sweet feel */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 28px;
+    color: #d9534f;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #d9534f;
+  }
+  
+  /* Menu Section Styles */
+  .menu-section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #d9534f;
+  }
+  
+  /* Menu Grid */
+  .menu-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  /* Menu Card */
+  .menu-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  /* Menu Image */
+  .menu-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  /* Menu Information */
+  .menu-info {
+    padding: 15px;
+  }
+  
+  .menu-item-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .menu-item-desc {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .menu-item-price {
+    font-size: 18px;
+    color: #d9534f;
+    font-weight: bold;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .header-container {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      margin-top: 10px;
+    }
+  }
+  

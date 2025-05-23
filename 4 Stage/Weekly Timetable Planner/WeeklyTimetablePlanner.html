@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Timetable Planner</title>
+    <Style>
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(184, 224, 114);
+            margin: 0;
+            padding: 20px;
+        }
+        h1
+        {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th , td
+        {
+            border: 1px solid #3b09ec;
+            text-align: center;
+            padding: 10px;
+        }
+        th
+        {
+            background-color: cornflowerblue;
+            color: rgb(232, 233, 208);
+        }
+
+        tbody tr:nth-child(even)
+        {
+            background-color: darkkhaki;
+        }
+
+        tbody tr:hover
+        {
+            background-color: cyan;
+        }
+
+        @media (max-width: 768px)
+        {
+            table , thead , tbody , th ,td , tr
+            {
+                display: block;
+            }
+            thead tr 
+            {
+                position: absolute;
+                top:  -9999px;
+                left: -9999px;
+            }
+            tr 
+            {
+                margin-bottom: 15px;
+            }
+            td 
+            {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+            }
+            td::before
+            {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+            }
+        }
+    </Style>
+</head>
+<body>
+    <h1>Weekly Timetable Planner</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>SunDay</th>
+                <th>MonDay</th>
+                <th>TuesDay</th>
+                <th>WednesDay</th>
+                <th>ThursDay</th>
+                <th>FriDay</th>
+                <th>SaturDay</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label = "Time">8 AM - 9 AM</td>
+                <td data-label = "SunDay">رياضيات</td>
+                <td data-label = "MonDay">انكليزي</td>
+                <td data-label = "TuesDay">تاريخ</td>
+                <td data-label = "WednesDay">علوم</td>
+                <td data-label = "ThursDay">فن</td>
+                <td data-label = "FriDay">كرة قدم </td>
+                <td data-label = "SaturDay">سوني 5</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">9 AM - 10 AM</td>
+                <td data-label = "SunDay">رياضيات</td>
+                <td data-label = "MonDay">انكليزي</td>
+                <td data-label = "TuesDay">كيمياء</td>
+                <td data-label = "WednesDay">احياء</td>
+                <td data-label = "ThursDay">جغرافية</td>
+                <td data-label = "FriDay">تمرين</td>
+                <td data-label = "SaturDay">كرة السلة</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">10 AM - 11 AM</td>
+                <td data-label = "SunDay">استراحة</td>
+                <td data-label = "MonDay">استراحة</td>
+                <td data-label = "TuesDay">استراحة</td>
+                <td data-label = "WednesDay">استراحة</td>
+                <td data-label = "ThursDay">استراحة</td>
+                <td data-label = "FriDay">استراحة</td>
+                <td data-label = "SaturDay">استراحة</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">11 AM - 12 PM</td>
+                <td data-label = "SunDay">علوم حاسوب</td>
+                <td data-label = "MonDay">راضيات</td>
+                <td data-label = "TuesDay">انكليزي</td>
+                <td data-label = "WednesDay">تاريخ</td>
+                <td data-label = "ThursDay">علوم</td>
+                <td data-label = "FriDay">اسلامية</td>
+                <td data-label = "SaturDay">كتب علمية</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">12 PM - 1 PM</td>
+                <td data-label = "SunDay">غداء</td>
+                <td data-label = "MonDay">غداء</td>
+                <td data-label = "TuesDay">غداء</td>
+                <td data-label = "WednesDay">غداء</td>
+                <td data-label = "ThursDay">غداء</td>
+                <td data-label = "FriDay">غداء</td>
+                <td data-label = "SaturDay">غداء</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">1 PM - 2 PM</td>
+                <td data-label = "SunDay">انكليزي</td>
+                <td data-label = "MonDay">رياضيات</td>
+                <td data-label = "TuesDay">علوم</td>
+                <td data-label = "WednesDay">فن</td>
+                <td data-label = "ThursDay">مختبر علوم الحاسوب</td>
+                <td data-label = "FriDay">كمال اجسام</td>
+                <td data-label = "SaturDay">كرة قدم</td>
+            </tr>
+            <tr>
+                <td data-label = "Time">2 PM - 3 PM</td>
+                <td data-label = "SunDay">اسلامية</td>
+                <td data-label = "MonDay">كرة السلة</td>
+                <td data-label = "TuesDay">علوم حياة</td>
+                <td data-label = "WednesDay">تمثيل</td>
+                <td data-label = "ThursDay">مختبر علوم الحاسوب</td>
+                <td data-label = "FriDay">مسرح</td>
+                <td data-label = "SaturDay">كرة الطائرة</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

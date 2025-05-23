@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Standings Dashboard</title>
+    <style>
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .standings
+        {
+            max-width: 800px;
+            margin: auto;
+            background: cyan;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(227, 10, 10, 0.1);
+        }
+        h1
+        {
+            text-align: center;
+            color: brown;
+            margin-bottom: 20px;
+        }
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead tr
+        {
+            background: gold;
+            color: rgb(36, 41, 39);
+            text-align: center;
+        }
+        th,td
+        {
+            padding: 10px;
+            border: 1px solid #070606;
+            text-align: center;
+        }
+        tbody tr:nth-child(even)
+        {
+            background: cadetblue;
+        }
+        tbody tr:hover
+        {
+            background: darkseagreen;
+        }
+        /*Highlight chapion team*/
+        .champion
+        {
+            background: burlywood;
+            font-weight: bold;
+        }
+        img
+        {
+            max-width: 60px;
+            height: auto;
+        }
+        /*Responsive design*/
+        @media (max-width:600px)
+        {
+            table , thead , tbody , tr , td , th 
+            {
+                display: block;
+            }
+            thead 
+            {
+                display: none;
+            }
+            tr 
+            {
+                margin-bottom: 15px;
+                border: 1px solid #070606;
+            }
+            td 
+            {
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+                border: none;
+                border-bottom: 1px solid #070606;
+            }
+            td::before
+            {
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                text-align: left;
+            }
+            td:nth-of-type(1)::before{content: "Rank";}
+            td:nth-of-type(2)::before{content: "Team";}
+            td:nth-of-type(3)::before{content: "Playerd";}
+            td:nth-of-type(4)::before{content: "Wins";}
+            td:nth-of-type(5)::before{content: "Draws";}
+            td:nth-of-type(6)::before{content: "Losses";}
+            td:nth-of-type(7)::before{content: "Points";}
+            td:nth-of-type(8)::before{content: "Logo";}
+        }
+    </style>
+</head>
+<body>
+    <div class = "standings">
+        <h1>League Standings</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Points</th>
+                    <th>Logo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class = "champion">
+                    <td>1</td>
+                    <td>Alpha FC</td>
+                    <td>30</td>
+                    <td>20</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>65</td>
+                    <td><img src = "Alpha FC.png" alt = "Alpha FC" width="140" height="150"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Beta united</td>
+                    <td>30</td>
+                    <td>18</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>60</td>
+                    <td><img src = "Beta united.png" alt = "Alpha FC" width="140" height="150"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Gamma City</td>
+                    <td>30</td>
+                    <td>15</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>53</td>
+                    <td><img src = "Gamma City.png" alt = "Alpha FC" width="140" height="100"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Delta Rovers</td>
+                    <td>30</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>49</td>
+                    <td><img src = "Delta Rovers.jpeg" alt = "Alpha FC" width="140" height="140"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Epsilon FC</td>
+                    <td>30</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>48</td>
+                    <td><img src = "Epsilon FC.png" alt = "Alpha FC" width="140" height="140"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Report </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = "grade-report">
+        <h1>Student Grade Report</h1>
+
+        <!-- Form For Entering Grade Data-->
+         <form id = "gradeForm">
+            <input type="text" id = "studentName" placeholder="Student Name" required>
+            <input type="text" id = "subject" placeholder = "Subject" required>
+            <input type="number" id = "score" placeholder = "Numeric Score" required min = "0" max = "100">
+            <button type= "submit">Add Grade</button>
+         </form>
+
+         <!-- Report Table -->
+          <table id = "gradeTable">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Subject</th>
+                    <th>Numeric Score</th>
+                    <th>Letter Grade</th>
+                    <th>Grade In Words</th>
+                </tr>
+            </thead>
+            <tbody id = "gradeBody">
+                 <!-- Existing Entries can be placed here -->
+            </tbody>
+            <tfoot>
+                <tr class = "smmary">
+                    <td colspan="2" style="text-align: right;">Overall Average المعدل العام :</td>
+                    <td id = avgScore>0</td>
+                    <td colspan="2"></td>
+                </tr>
+            </tfoot>
+          </table>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

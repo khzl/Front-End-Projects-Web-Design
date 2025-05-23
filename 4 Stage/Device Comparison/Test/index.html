@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Comparison</title>
+    <style>
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            background: burlywood;
+            padding: 20px;
+            margin: 0;
+        }
+        h1
+        {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+            background: cornflowerblue;
+            box-shadow: 0 2px 4px rgba(145, 88, 88, 0);
+            margin: 0 auto;
+        }
+        th , td
+        {
+            padding: 12px;
+            border: 1px solid #080808;
+            text-align: center;
+        }
+        th
+        {
+            background: darkseagreen;
+            color: rgb(104, 59, 22);
+        }
+        tbody tr:nth-child(even)
+        {
+            background: brown;
+        }
+        tbody tr:hover
+        {
+            background: darkseagreen;
+        }
+        img
+        {
+            max-height: 100px;
+            height: auto;
+        }
+        /*Responsive Layout For Smaller Screens*/
+        @media (max-width: 768px)
+        {
+        table,thead,tbody,th,td,tr
+        {
+            display: block;
+        }
+        thead tr 
+        {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        tr 
+        {
+            margin-bottom: 15px;
+        }
+        td 
+        {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+            text-align: left;
+        }
+        td:before 
+        {
+            position: absolute;
+            left: 10px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+        /*Responsive Labels For Each Columns*/
+        td:nth-of-type(1):before {content: "Specification";}
+        td:nth-of-type(2):before {content: "Tablet";}
+        td:nth-of-type(3):before {content: "iPad";}
+        td:nth-of-type(4):before {content: "Mac";}
+        }
+    </style>
+</head>
+<body>
+    <h1>Device Comparison</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Specification</th>
+                <th>Tablet</th>
+                <th>IPad</th>
+                <th>Mac</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Row For Product Images -->
+             <tr>
+                <td>Image</td>
+                <td><img src="Tablet.jpeg" alt="Tablet Photo" width="150" height="150"></td>
+                <td><img src="Ipad.jpeg" alt="Ipad Photo" width="150" height="150"></td>
+                <td><img src="Mac.jpeg" alt="Mac Book Photo" width="150" height="150"></td>
+             </tr>
+             <tr>
+                <td>Price</td>
+                <td>299$</td>
+                <td>499$</td>
+                <td>1299$</td>
+             </tr>
+             <tr>
+                <td>Display</td>
+                <td>10.1" IPS</td>
+                <td>10.2" Retina</td>
+                <td>13" Retina</td>
+             </tr>
+             <tr>
+                <td>Operating System</td>
+                <td>Android</td>
+                <td>IOS</td>
+                <td>macOS</td>
+             </tr>
+             <tr>
+                <td>Processor</td>
+                <td>Quad-Core</td>
+                <td>A12 Bionic</td>
+                <td>Intel Core i5</td>
+             </tr>
+             <tr>
+                <td>Battery Life</td>
+                <td>8 hours</td>
+                <td>10 Hours</td>
+                <td>Portable 10 Hours*</td>
+             </tr>
+             <tr>
+                <td>Storage</td>
+                <td>64 GB</td>
+                <td>128 GB</td>
+                <td>256 GB</td>
+             </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center; font-size: 0.9em; margin-top: 10px;">
+        Battery life For Macs Refers To Portable Use (e.g... MacBooks).</p>
+</body>
+</html>

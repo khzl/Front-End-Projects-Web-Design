@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table In Html</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th , td 
+        {
+            border: 1px solid #060413;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>Monthly Sales Data</caption>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">In Stock</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>1.00$</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+            <td>0.50$</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total</td>
+            <td>150$</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Item A</td>
+            <td>50$</td>
+        </tr>
+        <tr>
+            <td>30$</td>
+        </tr>
+        <tr>
+            <td>50$</td>
+        </tr>
+        <tr>
+            <td>60$</td>
+        </tr>
+    </table>
+<br>
+<br>
+    <table border="2">
+    <caption>Employee Performance</caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Alice</td>
+            <td>Markting</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>Sales</td>
+            <td>90</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">Average Score</td>
+            <td>87.5</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>

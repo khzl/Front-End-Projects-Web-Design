@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery Page</title>
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 20px;
+            background-color: #14ab6a95;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1
+        {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: bisque;
+            color:darkslategray;
+        }
+        .gallery
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            grid-gap: 15px;
+        }
+        .gallery-item
+        {
+            position: relative;
+            overflow: hidden;
+            background-color: #6eb4ee;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .gallery-item img
+        {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img
+        {
+            transform: scale(1.1);
+        }
+        .caption
+        {
+            position: absolute;
+            bottom: 0;
+            background: rgba(51, 189, 39, 0.6);
+            color: rgb(240, 11, 11);
+            width: 100%;
+            text-align: center;
+            padding: 10 px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .caption
+        {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Photo Gallery </h1>
+    <div class = "gallery">
+        <div class = "gallery-item">
+            <img src = "Images/Image1.jpg" alt = "Image 1"  height = "495">
+            <div class = "caption">Image 1</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image2.jpeg" alt = "Image 2" height = "495">
+            <div class = "caption">Image 2</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image3.jpg" alt = "Image 3" height = "495">
+            <div class = "caption">Image 3</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image4.jpg" alt = "Image 4" height = "495">
+            <div class = "caption">Image 4</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image5.jpg" alt = "Image 5" height = "495">
+            <div class = "caption">Image 5</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image6.jpg" alt = "Image 6" height = "495">
+            <div class = "caption">Image 6</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image7.jpeg" alt = "Image 7" height = "495">
+            <div class = "caption">Image 7</div>
+        </div>
+        <div class = "gallery-item">
+            <img src = "Images/Image8.png" alt = "Image 8" height = "495">
+            <div class = "caption">Image 8</div>
+        </div>
+    </div>
+</body>
+</html>

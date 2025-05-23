@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 15px;
+        }
+        th{
+            text-align: left;
+        }
+        table#t01{
+        width:100%;
+        background-color:#f1f1c1;
+        }
+        table#t02{
+            width: 100%;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <table id="t01" style="width: 100%;">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>           
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>Jhon</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+     <!--To Add a Caption To a Table Use The <caption> tag-->
+        <caption>Monthly Savings</caption>
+        <table id="t02" style="width:100%">
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>100$</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>50$</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <!--UnOrdered List-->
+        <ul style="list-style-type: disc;">
+            <!--sets the list item marker to a bullet (default)-->
+            <!--The Css List-style-type property is used to define the style of the list item marker-->
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type: circle;">
+            <!--sets the list item marker to a circle-->
+            <!--The Css List-style-type property is used to define the style of the list item marker-->
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type: square;">
+            <!--sets the list item marker to a square-->
+            <!--The Css List-style-type property is used to define the style of the list item marker-->
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <ul style="list-style-type: none;">
+            <!--the list items will not be marker-->
+            <!--The Css List-style-type property is used to define the style of the list item marker-->
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <!--Ordered List-->
+        <ol>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <!--the type attribute of the <ol> tag defines the type of the list item marker-->
+            <ol type="1">
+                <!--the list items will be numbered with numbers (default)-->
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+            
+            <ol type="A">
+                <!--the list items will be numbered with uppercase letters-->
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+
+            <ol type="a">
+                <!--the list items will be numbered with lowercse letters-->
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+
+            <ol type="I">
+                <!--the list items will be numbered with uppercase roman numbers-->
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+
+            <ol type="i">
+                <!--the list items will be numbered with lowercase roman numbers-->
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+
+            <dl>
+                <dt>Coffee</dt>
+                <dd>Black Hort drink</dd>
+                <dt>Milk</dt>
+                <dd>White Cold Drink</dd>
+            </dl>
+</body>
+</html>
