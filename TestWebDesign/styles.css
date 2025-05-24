@@ -1,0 +1,63 @@
+p
+{
+    background-color: aqua;
+}
+body
+{
+    background-color: lightblue;
+}
+h1
+{
+    color: red;
+    font-size: 24px;
+}
+h2
+{
+    color: green;
+    font-size: 20px;
+}
+table
+{
+    border: 1px solid black;
+    width: 100%;
+}
+th, td
+{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+ul
+{
+    list-style-type: square;
+    padding-left: 20px;
+}
+th
+{
+    background-color: lightgray;
+}
+td
+{
+    background-color: white;
+}
+a
+{
+    color: blue;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+blockquote
+{
+    border-left: 4px solid gray;
+    padding-left: 16px;
+    color: darkgray;
+    font-style: italic;
+}
