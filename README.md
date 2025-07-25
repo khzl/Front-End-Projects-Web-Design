@@ -36,17 +36,13 @@ Optional Frameworks – Bootstrap, simple grid and component libraries
 🚀 Getting Started
 Clone the repository
 
-bash
-Copy
-Edit
 git clone https://github.com/khzl/Front-End-Projects-Web-Design.git
+
 Open a project
 
 Navigate into a folder, e.g.:
 
-bash
-Copy
-Edit
+
 cd Front-End-Projects-Web-Design/login-form
 Open index.html in your browser to preview and test.
 
